@@ -53,8 +53,8 @@ POST
  请求参数
 | 参数名 | 类型 | 必填 | 描述 | 默认值 | 参考值 |
 
-| userName| string| 是 | 客户名 | - | - |
-| password| string | 是| 密码 | - | - |
+| userName| string| 是 | 客户名 | --- | --- |
+| password| string | 是| 密码 | --- | --- |
 
 返回示例
 无
