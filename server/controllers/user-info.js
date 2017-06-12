@@ -1,5 +1,6 @@
 const userInfoService = require('./../services/user-info')
 const userCode = require('./../codes/user')
+const Buffer = require('buffer').Buffer
 
 module.exports = {
 
@@ -31,6 +32,16 @@ module.exports = {
     }
 
     if ( result.success === true ) {
+      // 6-11 为了配合websocket， 设置用cookies 来进行登陆
+      let user = {
+        id: userResult.id,
+        name: userResult.name
+      }
+      console.log('buffer', Buffer)
+      let value = Buffer.from(JSON.stringify(user)).toString('base64');
+      console.log(`Set cookie value: ${value}`);
+      ctx.cookies.set('name', value);
+
       ctx.session.isLogin = true
       ctx.session.userName = userResult.name
       ctx.session.userId = userResult.id

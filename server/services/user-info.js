@@ -74,7 +74,7 @@ const user = {
       message: '',
     }
 
-    if ( /[a-z0-9\_\-]{6,16}/.test(userInfo.userName) === false ) {
+    /* if ( /[a-z0-9\_\-]{6,16}/.test(userInfo.userName) === false ) {
       result.message = userCode.ERROR_USER_NAME
       return result
     }
@@ -85,7 +85,7 @@ const user = {
     if ( !/[\w+]{6,16}/.test( userInfo.password )) {
       result.message = userCode.ERROR_PASSWORD
       return result
-    }
+    } */
     if ( userInfo.password !== userInfo.confirmPassword ) {
       result.message = userCode.ERROR_PASSWORD_CONFORM
       return result
